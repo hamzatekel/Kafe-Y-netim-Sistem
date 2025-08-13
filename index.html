@@ -1,61 +1,46 @@
 <!DOCTYPE html>
-  <html lang = "tr">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Kafe Yönetim Sistemi</title>
-        <link rel="stylesheet" href="style.css"/>
-    </head>
-    <body>
-        <h1>Kafe Adisyon Tarifesi</h1>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kafe Yönetim Sistemi</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>Kafe Adisyon Tarifesi</h1>
 
-<div class="wrapper">
-    <!-- Masa Düzeni -->
-    <div class="section">
-        <h2>Masa Düzeni</h2>
-        <div class="container">
-            <button class="masa">Masa 1</button>
-            <button class="masa">Masa 2</button>
-            <button class="masa">Masa 3</button>
-            <button class="masa">Masa 4</button>
-            <button class="masa">Masa 5</button>
-            <button class="masa">Masa 6</button>
+    <div class="wrapper">
+        <!-- Masa Düzeni -->
+        <div class="section">
+            <h2>Masa Düzeni</h2>
+            <div class="container" id="masaContainer">
+                <button class="masa">Masa 1</button>
+                <button class="masa">Masa 2</button>
+                <button class="masa">Masa 3</button>
+                <button class="masa">Masa 4</button>
+                <button class="masa">Masa 5</button>
+                <button class="masa">Masa 6</button>
+            </div>
+            <button id="masaEkle">Masa Ekle</button>
         </div>
-        <button id="masaEkle">Masa Ekle</button>
     </div>
 
-    <!-- Tatlılar -->
-    <div class="section">
-        <h2>Tatlılar</h2>
-        <div class="container">
-            <button class="yiyecek">Tramisu</button>
-            <button class="yiyecek">Muhallebi</button>
-            <button class="yiyecek">San Sebastian</button>
-            <button class="yiyecek">Mozaik Pasta</button>
-            <button class="yiyecek">Güllaç</button>
-            <button class="yiyecek">Baklava</button>
+    <!-- Sipariş Ekranı -->
+    <div id="siparisEkrani" class="hidden">
+        <div class="menu">
+            <h2 id="seciliMasa"></h2>
+            <h3>Menü</h3>
+            <div id="kategoriListesi"></div>
+            <div id="urunListesi"></div>
         </div>
-        <button id="tatliEkle">Tatlı Ekle</button>
-    </div>
-    <div class="section">
-        <h2>Icecekler</h2>
-        <div class="container">
-            <button class="icecek">Soda</button>
-            <button class="icecek">Kola</button>
-            <button class="icecek">Limonata</button>
-            <button class="icecek">Su</button>
-            <button class="icecek">Şalgam</button>
-            <button class="icecek">Ayran</button>
+        <div class="siparisListesi">
+            <h3>Siparişler</h3>
+            <ul id="siparisUrunleri"></ul>
+            <p>Toplam: <span id="toplamFiyat">0</span> TL</p>
+            <button id="odemeAl">Ödeme Al</button>
         </div>
-        <button id="icecekEkle">Icecek Ekle</button>
     </div>
-</div>
 
-           
-        
-        <script src="app.js"></script>
-       
-        
-    </body>
-
-    </html>
+    <script src="app.js"></script>
+</body>
+</html>

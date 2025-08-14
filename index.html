@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kafe Yönetim Sistemi</title>
-    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafe Sipariş Sistemi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Kafe Adisyon Tarifesi</h1>
 
-    <div class="wrapper">
-        <!-- Masa Düzeni -->
-        <div class="section">
-            <h2>Masa Düzeni</h2>
-            <div class="container" id="masaContainer">
-                <button class="masa">Masa 1</button>
-                <button class="masa">Masa 2</button>
-                <button class="masa">Masa 3</button>
-                <button class="masa">Masa 4</button>
-                <button class="masa">Masa 5</button>
-                <button class="masa">Masa 6</button>
-            </div>
-            <button id="masaEkle">Masa Ekle</button>
+<header>
+    <h1>Kafe Sipariş Sistemi</h1>
+</header>
+
+<div class="container">
+    <!-- Masalar -->
+    <div class="tables">
+        <h3>Masalar</h3>
+        <button onclick="selectTable(1)" id="table1">Masa 1</button>
+        <button onclick="selectTable(2)" id="table2">Masa 2</button>
+        <button onclick="selectTable(3)" id="table3">Masa 3</button>
+        <button onclick="selectTable(4)" id="table4">Masa 4</button>
+    </div>
+
+    <!-- Menü -->
+    <div class="menu">
+        <h3>Menü</h3>
+        <div class="category">
+            <h4>Tatlılar</h4>
+            <div class="item">Sütlaç <span>₺15</span> <button onclick="addToCart('Sütlaç',15)">Ekle</button></div>
+            <div class="item">Baklava <span>₺20</span> <button onclick="addToCart('Baklava',20)">Ekle</button></div>
+        </div>
+        <div class="category">
+            <h4>Sıcak İçecekler</h4>
+            <div class="item">Türk Kahvesi <span>₺12</span> <button onclick="addToCart('Türk Kahvesi',12)">Ekle</button></div>
+            <div class="item">Çay <span>₺8</span> <button onclick="addToCart('Çay',8)">Ekle</button></div>
+        </div>
+        <div class="category">
+            <h4>Soğuk İçecekler</h4>
+            <div class="item">Ayran <span>₺10</span> <button onclick="addToCart('Ayran',10)">Ekle</button></div>
+            <div class="item">Kola <span>₺15</span> <button onclick="addToCart('Kola',15)">Ekle</button></div>
+        </div>
+        <div class="category">
+            <h4>Sandviçler</h4>
+            <div class="item">Tavuklu Sandviç <span>₺25</span> <button onclick="addToCart('Tavuklu Sandviç',25)">Ekle</button></div>
+            <div class="item">Sucuklu Sandviç <span>₺20</span> <button onclick="addToCart('Sucuklu Sandviç',20)">Ekle</button></div>
         </div>
     </div>
 
-    <!-- Sipariş Ekranı -->
-    <div id="siparisEkrani" class="hidden">
-        <div class="menu">
-            <h2 id="seciliMasa"></h2>
-            <h3>Menü</h3>
-            <div id="kategoriListesi"></div>
-            <div id="urunListesi"></div>
-        </div>
-        <div class="siparisListesi">
-            <h3>Siparişler</h3>
-            <ul id="siparisUrunleri"></ul>
-            <p>Toplam: <span id="toplamFiyat">0</span> TL</p>
-            <button id="odemeAl">Ödeme Al</button>
-        </div>
+    <!-- Sepet -->
+    <div class="cart">
+        <h3>Sepet</h3>
+        <div id="cartItems"></div>
+        <div class="total">Toplam: ₺<span id="totalPrice">0</span></div>
+        <button class="pay-btn" onclick="pay()">Ödeme Yap</button>
     </div>
+</div>
 
-    <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

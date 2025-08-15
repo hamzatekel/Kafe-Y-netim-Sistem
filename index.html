@@ -20,34 +20,49 @@
         <button onclick="selectTable(2)" id="table2">Masa 2</button>
         <button onclick="selectTable(3)" id="table3">Masa 3</button>
         <button onclick="selectTable(4)" id="table4">Masa 4</button>
+        <button onclick="selectTable(5)" id="table5">Masa 5</button>
+        <button onclick="selectTable(6)" id="table6">Masa 6</button>
+        <button onclick="selectTable(7)" id="table7">Masa 7</button>
+        <button onclick="selectTable(8)" id="table8">Masa 8</button>
     </div>
 
     <!-- Menü -->
     <div class="menu">
         <h3>Menü</h3>
         <div class="category">
-            <h4>Tatlılar</h4>
-            <div class="item">Sütlaç <span>₺15</span> <button onclick="addToCart('Sütlaç',15)">Sepete Ekle</button></div>
-            <div class="item">Baklava <span>₺20</span> <button onclick="addToCart('Baklava',20)">Sepete Ekle</button></div>
-             <div class="item">Tramisu <span>₺30</span> <button onclick="addToCart('Tramisu',30)">Sepete Ekle</button></div>
-              <div class="item">Güllaç <span>₺35</span> <button onclick="addToCart('Güllaç',35)">Sepete Ekle</button></div>
+            <h4 onclick="toggleCategory(this)">Tatlılar</h4>
+            <div class="items">
+                <div class="item">Sütlaç <span>₺15</span> <button onclick="addToCart('Sütlaç',15)">Sepete Ekle</button></div>
+                <div class="item">Baklava <span>₺20</span> <button onclick="addToCart('Baklava',20)">Sepete Ekle</button></div>
+                <div class="item">Tramisu <span>₺30</span> <button onclick="addToCart('Tramisu',30)">Sepete Ekle</button></div>
+                <div class="item">Güllaç <span>₺35</span> <button onclick="addToCart('Güllaç',35)">Sepete Ekle</button></div>
+            </div>
         </div>
+
         <div class="category">
-            <h4>Sıcak İçecekler</h4>
-            <div class="item">Türk Kahvesi <span>₺12</span> <button onclick="addToCart('Türk Kahvesi',12)">Sepette Ekle</button></div>
-            <div class="item">Çay <span>₺8</span> <button onclick="addToCart('Çay',8)">Sepete Ekle</button></div>
-             <div class="item">Filtre Kahve<span>₺15</span> <button onclick="addToCart('Filtre Kahve',18)">Sepete Ekle</button></div>
+            <h4 onclick="toggleCategory(this)">Sıcak İçecekler</h4>
+            <div class="items">
+                <div class="item">Türk Kahvesi <span>₺12</span> <button onclick="addToCart('Türk Kahvesi',12)">Sepete Ekle</button></div>
+                <div class="item">Çay <span>₺8</span> <button onclick="addToCart('Çay',8)">Sepete Ekle</button></div>
+                <div class="item">Filtre Kahve <span>₺15</span> <button onclick="addToCart('Filtre Kahve',15)">Sepete Ekle</button></div>
+            </div>
         </div>
+
         <div class="category">
-            <h4>Soğuk İçecekler</h4>
-            <div class="item">Ayran <span>₺10</span> <button onclick="addToCart('Ayran',10)">Sepete Ekle</button></div>
-            <div class="item">Kola <span>₺15</span> <button onclick="addToCart('Kola',15)">Sepete Ekle</button></div>
-             <div class="item">Ice latte <span>₺20</span> <button onclick="addToCart('Ice latte',20)">Sepete Ekle</button></div>
+            <h4 onclick="toggleCategory(this)">Soğuk İçecekler</h4>
+            <div class="items">
+                <div class="item">Ayran <span>₺10</span> <button onclick="addToCart('Ayran',10)">Sepete Ekle</button></div>
+                <div class="item">Kola <span>₺15</span> <button onclick="addToCart('Kola',15)">Sepete Ekle</button></div>
+                <div class="item">Ice latte <span>₺20</span> <button onclick="addToCart('Ice latte',20)">Sepete Ekle</button></div>
+            </div>
         </div>
+
         <div class="category">
-            <h4>Sandviçler</h4>
-            <div class="item">Tavuklu Sandviç <span>₺25</span> <button onclick="addToCart('Tavuklu Sandviç',25)">Sepete Ekle</button></div>
-            <div class="item">Sucuklu Sandviç <span>₺20</span> <button onclick="addToCart('Sucuklu Sandviç',20)">Sepete Ekle</button></div>
+            <h4 onclick="toggleCategory(this)">Sandviçler</h4>
+            <div class="items">
+                <div class="item">Tavuklu Sandviç <span>₺25</span> <button onclick="addToCart('Tavuklu Sandviç',25)">Sepete Ekle</button></div>
+                <div class="item">Sucuklu Sandviç <span>₺20</span> <button onclick="addToCart('Sucuklu Sandviç',20)">Sepete Ekle</button></div>
+            </div>
         </div>
     </div>
 
@@ -56,7 +71,11 @@
         <h3>Sepet</h3>
         <div id="cartItems"></div>
         <div class="total">Toplam: ₺<span id="totalPrice">0</span></div>
-        <button class="pay-btn" onclick="pay()">Ödeme Yap</button>
+        <button id="paymentBtn" onclick="showPaymentOptions()">Ödeme Al</button>
+        <div id="paymentOptions" class="payment-options" style="display:none;">
+            <button class="pay-method" onclick="pay('nakit')">Nakit Ödeme</button>
+            <button class="pay-method" onclick="pay('kredi')">Kredi Kartı Ödeme</button>
+        </div>
     </div>
 </div>
 

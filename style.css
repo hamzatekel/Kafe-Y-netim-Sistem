@@ -1,20 +1,24 @@
+/* Genel Stil */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
 }
+
 header {
     background-color: #ff6f61;
     color: white;
     text-align: center;
     padding: 1rem;
 }
+
 .container {
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
 }
+
 .tables, .menu, .cart {
     background-color: white;
     border-radius: 10px;
@@ -22,9 +26,11 @@ header {
     margin: 1rem;
     padding: 1rem;
 }
+
 .tables {
     flex: 1 1 200px;
 }
+
 .tables button {
     display: block;
     margin: 0.5rem 0;
@@ -36,52 +42,118 @@ header {
     cursor: pointer;
     font-size: 1rem;
 }
+
 .tables button.active {
     background-color: #ff6f61;
     color: white;
 }
+
 .menu {
     flex: 2 1 400px;
 }
+
 .menu h3 {
     margin-top: 0;
 }
-.menu .category {
-    margin-bottom: 1rem;
+
+.category h4 {
+    cursor: pointer;
+    background-color: #ff6f61;
+    color: white;
+    padding: 0.3rem;
+    border-radius: 5px;
+    margin: 0.5rem 0;
 }
+
+.items {
+    display: none;
+    margin-left: 10px;
+}
+
 .menu .item {
     display: flex;
     justify-content: space-between;
     margin: 0.5rem 0;
 }
+
 .menu .item button {
-    margin-left: 1rem;
+    background-color: #ff6f61;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.menu .item button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 .cart {
     flex: 1 1 200px;
 }
+
 .cart h3 {
     margin-top: 0;
 }
+
 .cart .cart-item {
     display: flex;
     justify-content: space-between;
     margin: 0.5rem 0;
 }
+
 .cart .cart-item button {
-    margin-left: 0.5rem;
+    background-color: #ff6f61;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.cart .cart-item button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 .cart .total {
     font-weight: bold;
     margin-top: 1rem;
 }
-.pay-btn {
-    margin-top: 1rem;
-    padding: 0.5rem;
-    width: 100%;
-    background-color: #4CAF50;
+
+#paymentBtn {
+    background-color: #ff6f61;
     color: white;
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.5rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#paymentBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.pay-method {
+    background-color: #ff6f61;
+    color: white;
+    margin: 0.5rem 0;
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pay-method:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }

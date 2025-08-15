@@ -5,8 +5,9 @@ function selectTable(tableNumber) {
     selectedTable = tableNumber;
     document.querySelectorAll('.tables button').forEach(btn => btn.classList.remove('active'));
     document.getElementById('table' + tableNumber).classList.add('active');
-    cart = {}; // Masa değişince sepeti temizle
+    cart = {};
     renderCart();
+    hidePaymentOptions();
 }
 
 function addToCart(itemName, price) {
@@ -41,7 +42,12 @@ function renderCart() {
     document.getElementById('totalPrice').innerText = total;
 }
 
-function pay() {
+function toggleCategory(header) {
+    const itemsDiv = header.nextElementSibling;
+    itemsDiv.style.display = itemsDiv.style.display === 'block' ? 'none' : 'block';
+}
+
+function showPaymentOptions() {
     if (!selectedTable) {
         alert('Önce masa seçin!');
         return;
@@ -50,9 +56,18 @@ function pay() {
         alert('Sepet boş!');
         return;
     }
-    alert(`Masa ${selectedTable} için toplam ödeme: ₺${document.getElementById('totalPrice').innerText}`);
+    document.getElementById('paymentOptions').style.display = 'block';
+}
+
+function hidePaymentOptions() {
+    document.getElementById('paymentOptions').style.display = 'none';
+}
+
+function pay(method) {
+    alert(`Masa ${selectedTable} için toplam ödeme: ₺${document.getElementById('totalPrice').innerText}\nÖdeme şekli: ${method === 'nakit' ? 'Nakit' : 'Kredi Kartı'}`);
     cart = {};
     renderCart();
     document.querySelectorAll('.tables button').forEach(btn => btn.classList.remove('active'));
     selectedTable = null;
+    hidePaymentOptions();
 }
